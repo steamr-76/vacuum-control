@@ -1,0 +1,6 @@
+# Default ignored files
+/.idea/workspace.xml
+*.jar
+/.idea
+/compiler.xml
+/vacuum.iml
