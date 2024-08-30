@@ -27,9 +27,11 @@ $(function() {
 		if(state) {
 			$("#bigButton").addClass("round-button-circle-on");
 			$("#bigButton").removeClass("round-button-circle-off");
+			$("#powerbutton").text("turn Off");
 		} else {
 			$("#bigButton").addClass("round-button-circle-off");
 			$("#bigButton").removeClass("round-button-circle-on");
+			$("#powerbutton").text("turn On");
 		}
 	}
 		

@@ -1,0 +1,17 @@
+### SystemD service definition for GNU/LINUX
+
+[Unit]
+Description=Vaccum remote control
+
+[Service]
+ExecStart=/usr/bin/java -Dpi4j.linking=dynamic -jar /opt/vacuum/vacuum-1.0.1-SNAPSHOT.jar --spring.profiles.active=pi
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=vacuum
+
+# root is required for pi4j
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
