@@ -1,14 +1,9 @@
 package org.deolfamily.vacuum.ws;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum PortState {
     ON(true), OFF(false);
 
-    @JsonProperty
-    private boolean on;
+    private final boolean on;
 
     PortState(boolean on) {
         this.on = on;

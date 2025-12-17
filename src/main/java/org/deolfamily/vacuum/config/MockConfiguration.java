@@ -1,18 +1,22 @@
 package org.deolfamily.vacuum.config;
 
-import org.deolfamily.vacuum.service.MemoryBasedOnOffDevice;
+import org.deolfamily.vacuum.service.MemoryPin;
 import org.deolfamily.vacuum.service.OnOffDevice;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.slf4j.Logger;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
+
+import static org.slf4j.LoggerFactory.getLogger;
 
 @Configuration
-@Profile({"mock"})
+@ConditionalOnProperty(name = "gpio.simulate", havingValue = "true", matchIfMissing = true)
 public class MockConfiguration {
+    private final Logger log = getLogger(this.getClass());
+
     @Bean
-    @Qualifier("Vacuum")
     public OnOffDevice InMemoryVacuumMachine() {
-        return new MemoryBasedOnOffDevice();
+        log.info("*** Simulating GPIO");
+        return new MemoryPin();
     }
 }

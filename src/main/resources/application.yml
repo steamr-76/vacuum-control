@@ -1,0 +1,8 @@
+spring:
+  main:
+    banner-mode: off
+
+gpio:
+  simulate: true
+  pin: 18
+

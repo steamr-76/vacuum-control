@@ -3,8 +3,6 @@ package org.deolfamily.vacuum.service;
 public interface OnOffDevice {
     boolean isOn();
 
-    boolean isOff();
-
     void turnOn();
 
     void turnOff();
